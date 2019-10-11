@@ -121,5 +121,12 @@ echo "installing waybackurls"
 go get github.com/tomnomnom/waybackurls
 echo "done"
 
+echo "installing findomain"
+cd ~/tools/ && mkdir findomain && cd findomain
+wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
+chmod +x findomain-linux
+cd ~/tools
+echo "done"
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
