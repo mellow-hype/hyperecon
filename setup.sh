@@ -5,10 +5,12 @@
 ROOT=`pwd`
 
 #
+sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
 sudo apt-get install -y jq
 sudo apt-get install -y ruby-full
+sudo apt-get install -y python2 python3
 sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
 sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
 sudo apt-get install -y python-setuptools
@@ -38,11 +40,11 @@ sudo mv go /usr/local
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
-echo 'source $HOME/.bashrc' >> ~/.bash_profile
-source ~/.bash_profile
+echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+echo 'export GOPATH=$HOME/go'	>> ~/.bashrc			
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bashrc	
+echo 'source $HOME/.bashrc' >> ~/.bashrc
+source ~/.bashrc
 
 # install sublister
 echo "installing Sublist3r"
@@ -50,16 +52,6 @@ git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
 pip install -r requirements.txt
 cd ~/tools/
-echo "done"
-
-#install chromium
-echo "Installing Chromium"
-sudo snap install chromium
-echo "done"
-
-# install aquatone
-echo "Installing Aquatone"
-go get github.com/michenriksen/aquatone
 echo "done"
 
 # install dirsearch
@@ -125,6 +117,8 @@ wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-l
 chmod +x findomain-linux
 cd ~/tools
 echo "done"
+
+echo "alias fdomain=$HOME/tools/findomain/findomain-linux" >> ~/.bashrc
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
