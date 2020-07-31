@@ -19,6 +19,8 @@ foldername="recon-$todate_$(cat /proc/sys/kernel/random/uuid | cut -d '-' -f 1)"
 path=$(pwd)
 dirsearchWordlist=$path/wordlists/MEGA_DIR_DISCOVER.txt
 massdnsWordlist=$path/wordlists/commonspeak2-top1000-subs.txt
+subdomainThreads=10
+dirsearchThreads=50
 
 domain=
 
