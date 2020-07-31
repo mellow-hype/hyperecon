@@ -19,10 +19,6 @@ sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y nmap
 
-if [ -f "$ROOT/bash_func" ]; then
-    cat $ROOT/bash_func >> ~/.bash_profile
-fi
-
 # get wordlists
 if [! -d "$ROOT/wordlists" ]; then
     mkdir $ROOT/wordlists
